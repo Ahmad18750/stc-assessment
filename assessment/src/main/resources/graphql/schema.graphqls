@@ -1,0 +1,9 @@
+type Query {
+    getItemMetadata(name: String, email: String): ItemDTO
+}
+
+type ItemDTO {
+    id: ID
+    name: String
+    type: String
+}
