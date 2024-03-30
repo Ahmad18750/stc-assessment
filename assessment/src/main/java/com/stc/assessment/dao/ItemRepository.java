@@ -15,6 +15,7 @@ import java.util.Optional;
 public interface ItemRepository extends JpaRepository<Item , Integer> {
 
     boolean existsByName(String name);
+    boolean existsByNameAndType(String name, ItemTypeEnum type);
     boolean existsByNameAndTypeAndParent_Name(String name, ItemTypeEnum itemType, String parentName);
 
     @Query("select i from Item i left join fetch i.PermissionGroup pg where i.name = :name")
